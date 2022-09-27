@@ -1,5 +1,8 @@
 import React from 'react';
+import SearchTab from '@/components/search/SearchTab/SearchTab';
 
-const Home = () => <div>Home</div>;
+const Home = () => {
+  return <SearchTab />;
+};
 
 export default Home;
