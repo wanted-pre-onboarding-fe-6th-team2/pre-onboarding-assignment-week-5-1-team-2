@@ -1,6 +1,6 @@
 const SET_TIMEOUT_MIN_DELAY_MS = 4;
 
-const debounce = (callback, delay = SET_TIMEOUT_MIN_DELAY_MS) => {
+const debounce = (callback, delayMs = SET_TIMEOUT_MIN_DELAY_MS) => {
   if (!callback) {
     throw new TypeError('callback 인자가 전달되지 않았습니다.');
   }
@@ -16,7 +16,7 @@ const debounce = (callback, delay = SET_TIMEOUT_MIN_DELAY_MS) => {
       clearTimeout(timerId);
     }
 
-    timerId = setTimeout(callback, delay);
+    timerId = setTimeout(callback, delayMs);
   };
 };
 
