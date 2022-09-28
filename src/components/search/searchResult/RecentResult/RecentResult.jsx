@@ -14,13 +14,13 @@ const RecentResult = () => {
       </Styled.RecentKeywordBox>
       <Styled.SuggestionKeywordWrraper>
         <Styled.SubText>추천 검색어로 검색해보세요</Styled.SubText>
-        <Styled.SuggestionKeywordBox>
+        <div>
           <Styled.SuggestionKeyword>B형 간염</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>비만</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>관절염</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>우울증</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>식도염</Styled.SuggestionKeyword>
-        </Styled.SuggestionKeywordBox>
+        </div>
       </Styled.SuggestionKeywordWrraper>
     </>
   );

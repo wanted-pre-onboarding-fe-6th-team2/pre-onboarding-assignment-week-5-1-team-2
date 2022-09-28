@@ -6,12 +6,6 @@ const RecentKeywordBox = styled.div`
   padding: 20px;
 `;
 
-const SuggestionKeywordBox = styled.div`
-  width: 450px;
-  height: 100%;
-  padding: 20px;
-`;
-
 const SubText = styled.div`
   font-size: 14px;
   font-weight: bold;
@@ -39,10 +33,4 @@ const SuggestionKeyword = styled.button`
   font-weight: bold;
 `;
 
-export {
-  RecentKeywordBox,
-  SubText,
-  SuggestionKeywordWrraper,
-  SuggestionKeyword,
-  SuggestionKeywordBox,
-};
+export { RecentKeywordBox, SubText, SuggestionKeywordWrraper, SuggestionKeyword };
