@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from '@/components/search/KeywordItem/KeywordItem.styled';
-import SearchIcon from '@/components/search/UI/SearchIcon';
+import { ReactComponent as SearchIcon } from '@/assets/search.svg';
 
 const boldText = (suggestedKeyword, searchKeyword) => {
   if (!searchKeyword) {

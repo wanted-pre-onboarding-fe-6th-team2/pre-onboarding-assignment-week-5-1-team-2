@@ -9,6 +9,7 @@ const RecentKeyword = styled.div`
   :hover {
     background-color: azure;
   }
+  column-gap: 10px;
 `;
 
 const SearchKeywordHighlight = styled.em`

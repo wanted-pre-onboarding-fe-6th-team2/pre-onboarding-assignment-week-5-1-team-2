@@ -21,6 +21,7 @@ const InputKeyword = styled.div`
   :hover {
     background-color: azure;
   }
+  column-gap: 10px;
 `;
 
 const SubText = styled.div`

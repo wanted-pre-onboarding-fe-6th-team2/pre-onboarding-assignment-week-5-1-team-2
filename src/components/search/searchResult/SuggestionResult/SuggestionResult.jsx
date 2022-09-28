@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from '@/components/search/searchResult/SuggestionResult/SuggestionResult.styled';
-import SearchIcon from '@/components/search/UI/SearchIcon';
+import { ReactComponent as SearchIcon } from '@/assets/search.svg';
 import KeywordItem from '@/components/search/KeywordItem/KeywordItem';
 
 const SuggestionResult = ({ searchSuggestList, searchKeyword }) => {
@@ -11,7 +11,7 @@ const SuggestionResult = ({ searchSuggestList, searchKeyword }) => {
       <Styled.InputKeywordBox>
         <Styled.InputKeyword>
           <SearchIcon />
-          &nbsp; {searchKeyword}
+          {searchKeyword}
         </Styled.InputKeyword>
       </Styled.InputKeywordBox>
       <Styled.SuggestionKeywordBox>
