@@ -2,12 +2,22 @@ import React from 'react';
 import * as Styled from '@/components/search/KeywordItem/KeywordItem.styled';
 import SearchIcon from '@/components/search/UI/SearchIcon';
 
-const KeywordItem = ({ item }) => {
+const KeywordItem = ({ item, idx, handleSuggestionItemClick, selected, hasText }) => {
+  console.log(item);
   return (
-    <Styled.RecentKeyword>
-      <SearchIcon />
-      &nbsp; {item}
-    </Styled.RecentKeyword>
+    <div>
+      {selected === idx && hasText === true ? (
+        <Styled.FocusedRecentKeyword onClick={() => handleSuggestionItemClick(item)}>
+          <SearchIcon />
+          &nbsp; {item}
+        </Styled.FocusedRecentKeyword>
+      ) : (
+        <Styled.RecentKeyword onClick={() => handleSuggestionItemClick(item)}>
+          <SearchIcon />
+          &nbsp; {item}
+        </Styled.RecentKeyword>
+      )}
+    </div>
   );
 };
 

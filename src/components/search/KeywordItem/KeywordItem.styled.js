@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const RecentKeyword = styled.div`
+const RecentKeyword = styled.li`
   display: flex;
   align-items: center;
   vertical-align: middle;
@@ -11,4 +11,13 @@ const RecentKeyword = styled.div`
   }
 `;
 
-export { RecentKeyword };
+const FocusedRecentKeyword = styled.li`
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  height: 25px;
+  margin: 10px 0px;
+  background-color: lightgray;
+`;
+
+export { RecentKeyword, FocusedRecentKeyword };
