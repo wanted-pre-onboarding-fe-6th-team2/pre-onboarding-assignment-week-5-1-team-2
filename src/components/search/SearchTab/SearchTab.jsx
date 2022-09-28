@@ -33,7 +33,7 @@ const SearchTab = () => {
         return;
       }
       if (event.key === 'Enter' && selected >= 0) {
-        handleSuggestionItemClick(searchSuggestList[searchKeyword][selected]);
+        handleSuggestionItemClick(searchSuggestList[searchKeyword][selected].sickNm);
         setSelected(-1);
       }
     }
@@ -59,8 +59,10 @@ const SearchTab = () => {
 
     if (searchKeyword) debounceSearchBySickName({ keyword: searchKeyword });
   }, [searchKeyword, debounceSearchBySickName]);
+
   useEffect(() => {
     console.log(searchSuggestList);
+    console.log(searchKeyword);
   }, [searchSuggestList]);
 
   return (
@@ -73,7 +75,6 @@ const SearchTab = () => {
           type="text"
           placeholder="질환명을 입력해 주세요."
           value={searchKeyword}
-          onKeyDown={handleKeyDown}
           onFocus={() => {
             setIsTabOpen(true);
           }}
@@ -82,6 +83,7 @@ const SearchTab = () => {
             setSelected(-1);
           }}
           onChange={onChangeSearchKeyword}
+          onKeyDown={handleKeyDown}
         />
         <Styled.SearchTabButton type="submit">
           <SearchIcon />
