@@ -11,12 +11,12 @@ const debounce = (callback, delayMs = SET_TIMEOUT_MIN_DELAY_MS) => {
 
   let timerId = null;
 
-  return () => {
+  return (paramsObject = {}) => {
     if (timerId) {
       clearTimeout(timerId);
     }
 
-    timerId = setTimeout(callback, delayMs);
+    timerId = setTimeout(() => callback(paramsObject), delayMs);
   };
 };
 
