@@ -20,4 +20,9 @@ const FocusedRecentKeyword = styled.li`
   background-color: lightgray;
 `;
 
-export { RecentKeyword, FocusedRecentKeyword };
+const SearchKeywordHighlight = styled.em`
+  font-style: normal;
+  font-weight: 700;
+`;
+
+export { FocusedRecentKeyword, RecentKeyword, SearchKeywordHighlight };
