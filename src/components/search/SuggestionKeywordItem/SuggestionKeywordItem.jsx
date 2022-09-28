@@ -31,7 +31,9 @@ const SuggestionKeywordItem = ({
         <Styled.FocusedRecentKeyword onClick={() => handleSuggestionItemClick(suggestedKeyword)}>
           {searchKeyword && (
             <>
-              <SearchIcon />
+              <Styled.IconWarraper>
+                <SearchIcon />
+              </Styled.IconWarraper>
               {prevStrOfSearchKeyword}
               <Styled.SearchKeywordHighlight>{searchKeyword}</Styled.SearchKeywordHighlight>
               {nextStrOfSearchKeyword}
@@ -42,7 +44,9 @@ const SuggestionKeywordItem = ({
         <Styled.RecentKeyword onClick={() => handleSuggestionItemClick(suggestedKeyword)}>
           {searchKeyword && (
             <>
-              <SearchIcon />
+              <Styled.IconWarraper>
+                <SearchIcon />
+              </Styled.IconWarraper>
               {prevStrOfSearchKeyword}
               <Styled.SearchKeywordHighlight>{searchKeyword}</Styled.SearchKeywordHighlight>
               {nextStrOfSearchKeyword}

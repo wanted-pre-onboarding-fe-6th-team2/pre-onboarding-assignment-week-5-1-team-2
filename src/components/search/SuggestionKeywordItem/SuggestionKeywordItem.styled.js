@@ -25,4 +25,8 @@ const SearchKeywordHighlight = styled.em`
   font-weight: 700;
 `;
 
-export { FocusedRecentKeyword, RecentKeyword, SearchKeywordHighlight };
+const IconWarraper = styled.div`
+  margin-right: 10px;
+`;
+
+export { FocusedRecentKeyword, RecentKeyword, SearchKeywordHighlight, IconWarraper };

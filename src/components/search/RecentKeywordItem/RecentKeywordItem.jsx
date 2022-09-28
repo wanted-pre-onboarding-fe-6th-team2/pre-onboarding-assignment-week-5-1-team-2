@@ -6,7 +6,7 @@ const RecentKeywordItem = ({ recentKeywordList }) => {
   return (
     <Styled.RecentKeyword>
       <SearchIcon />
-      &nbsp; {recentKeywordList}
+      {recentKeywordList}
     </Styled.RecentKeyword>
   );
 };
