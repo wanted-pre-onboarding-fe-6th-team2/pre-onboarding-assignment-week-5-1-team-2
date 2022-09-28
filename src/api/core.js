@@ -26,7 +26,7 @@ const http = {
   get: createApiMethod(createHttpRequest, HTTP_METHODS.GET),
   post: createApiMethod(createHttpRequest, HTTP_METHODS.POST),
   put: createApiMethod(createHttpRequest, HTTP_METHODS.PUT),
-  delete: createApiMethod(createHttpRequest, HTTP_METHODS.delete),
+  delete: createApiMethod(createHttpRequest, HTTP_METHODS.DELETE),
 };
 
 export default http;
