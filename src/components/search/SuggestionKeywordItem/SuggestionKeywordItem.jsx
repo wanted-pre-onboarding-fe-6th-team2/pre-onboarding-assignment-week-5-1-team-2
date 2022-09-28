@@ -9,8 +9,7 @@ const boldText = (suggestedKeyword, searchKeyword) => {
 
   const searchKeywordIndex = suggestedKeyword.indexOf(searchKeyword);
   const prevStrOfSearchKeyword = suggestedKeyword.slice(0, searchKeywordIndex);
-  const nextStrOfSearchKeyword = suggestedKeyword.slice(searchKeywordIndex + 1);
-
+  const nextStrOfSearchKeyword = suggestedKeyword.slice(searchKeywordIndex + searchKeyword.length);
   return { prevStrOfSearchKeyword, nextStrOfSearchKeyword };
 };
 
@@ -33,7 +32,7 @@ const SuggestionKeywordItem = ({
           {searchKeyword && (
             <>
               <SearchIcon />
-              &nbsp; {prevStrOfSearchKeyword}
+              {prevStrOfSearchKeyword}
               <Styled.SearchKeywordHighlight>{searchKeyword}</Styled.SearchKeywordHighlight>
               {nextStrOfSearchKeyword}
             </>
@@ -44,7 +43,7 @@ const SuggestionKeywordItem = ({
           {searchKeyword && (
             <>
               <SearchIcon />
-              &nbsp; {prevStrOfSearchKeyword}
+              {prevStrOfSearchKeyword}
               <Styled.SearchKeywordHighlight>{searchKeyword}</Styled.SearchKeywordHighlight>
               {nextStrOfSearchKeyword}
             </>
