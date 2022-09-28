@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from '@/components/search/SuggestionKeywordBox/SuggestionKeywordBox.styled';
 import RecentResult from '@/components/search/searchResult/RecentResult/RecentResult';
-import RecommandResult from '@/components/search/searchResult/RecommandResult/RecommandResult';
+import SuggestionResult from '@/components/search/searchResult/SuggestionResult/SuggestionResult';
 
 const SuggestionKeywordBox = ({ searchKeyword, openBox }) => {
   return (
@@ -11,7 +11,7 @@ const SuggestionKeywordBox = ({ searchKeyword, openBox }) => {
           {searchKeyword === '' ? (
             <RecentResult />
           ) : (
-            <RecommandResult searchKeyword={searchKeyword} />
+            <SuggestionResult searchKeyword={searchKeyword} />
           )}
         </Styled.Container>
       )}
