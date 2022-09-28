@@ -3,9 +3,14 @@ import * as Styled from '@/components/search/searchResult/SuggestionResult/Sugge
 import SearchIcon from '@/components/search/UI/SearchIcon';
 import KeywordItem from '@/components/search/KeywordItem/KeywordItem';
 
-const SuggestionResult = ({ searchKeyword }) => {
-  const suggestionKeywords = ['A형간염', '우울증', '감기', '코로나', '비염'];
-
+const SuggestionResult = ({
+  searchKeyword,
+  handleSuggestionItemClick,
+  options,
+  selected,
+  hasText,
+}) => {
+  console.log(options);
   return (
     <>
       <Styled.InputKeywordBox>
@@ -16,8 +21,15 @@ const SuggestionResult = ({ searchKeyword }) => {
       </Styled.InputKeywordBox>
       <Styled.SuggestionKeywordBox>
         <Styled.SubText>추천검색어</Styled.SubText>
-        {suggestionKeywords.map((item, i) => (
-          <KeywordItem item={item} key={i} />
+        {options.map((item, i) => (
+          <KeywordItem
+            item={item}
+            key={i}
+            idx={i}
+            handleSuggestionItemClick={handleSuggestionItemClick}
+            selected={selected}
+            hasText={hasText}
+          />
         ))}
       </Styled.SuggestionKeywordBox>
     </>
