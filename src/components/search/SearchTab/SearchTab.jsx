@@ -6,7 +6,7 @@ import { searchBySickName } from '@/api/searchApiService';
 import debounce from '@/utils/debounce';
 
 const SearchTab = () => {
-  const [searchSuggestList, setSearchSuggestList] = useState([]);
+  const [searchSuggestList, setSearchSuggestList] = useState({});
   const [searchKeyword, setSearchKeyword] = useState('');
   const [isTabOpen, setIsTabOpen] = useState(false);
 
@@ -16,9 +16,16 @@ const SearchTab = () => {
 
   const debounceSearchBySickName = useMemo(() => {
     return debounce(({ keyword }) => {
-      searchBySickName({ keyword }).then(setSearchSuggestList);
+      if (searchSuggestList[keyword]) return;
+
+      searchBySickName({ keyword }).then(response => {
+        setSearchSuggestList(prevSearchSuggestList => ({
+          ...prevSearchSuggestList,
+          [keyword]: response,
+        }));
+      });
     }, 500);
-  }, []);
+  }, [searchSuggestList]);
 
   useEffect(() => {
     if (searchKeyword) debounceSearchBySickName({ keyword: searchKeyword });
@@ -48,7 +55,7 @@ const SearchTab = () => {
         </Styled.SearchTabButton>
       </Styled.SearchTabForm>
       <SearchKeywordTab
-        searchSuggestList={searchSuggestList}
+        searchSuggestList={searchSuggestList[searchKeyword] ?? []}
         searchKeyword={searchKeyword}
         isTabOpen={isTabOpen}
       />
