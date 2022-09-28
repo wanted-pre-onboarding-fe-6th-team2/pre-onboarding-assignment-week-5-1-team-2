@@ -38,6 +38,7 @@ const SuggestionKeyword = styled.button`
   font-size: 14px;
   font-weight: bold;
 `;
+
 export {
   RecentKeywordBox,
   SubText,
