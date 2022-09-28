@@ -14,6 +14,12 @@ const RecentKeywordBox = styled.div`
   padding: 20px;
 `;
 
+const SuggestionKeywordBox = styled.div`
+  width: 450px;
+  height: 100%;
+  padding: 20px;
+`;
+
 const InputKeywordBox = styled.div`
   width: 450px;
   height: 100%;
@@ -43,7 +49,7 @@ const RecommandKeywordWrraper = styled.div`
   padding: 20px;
 `;
 
-const RecommandKeyword = styled.button`
+const SuggestionKeyword = styled.button`
   min-width: 50px;
   height: 40px;
   border: 1px solid aliceblue;
@@ -65,6 +71,7 @@ export {
   InputKeyword,
   SubText,
   RecommandKeywordWrraper,
-  RecommandKeyword,
+  SuggestionKeyword,
+  SuggestionKeywordBox,
   RecommandKeywordBox,
 };
