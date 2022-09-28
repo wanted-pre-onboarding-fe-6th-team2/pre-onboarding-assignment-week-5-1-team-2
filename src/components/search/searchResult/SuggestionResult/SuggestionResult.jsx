@@ -16,10 +16,16 @@ const SuggestionResult = ({ searchSuggestList, searchKeyword }) => {
       </Styled.InputKeywordBox>
       <Styled.SuggestionKeywordBox>
         <Styled.SubText>추천검색어</Styled.SubText>
-        {searchSuggestList.length === 0 ? (
+        {sliceSearchSuggestList.length === 0 ? (
           <Styled.NotMatchSearchKeyword>검색어 없음</Styled.NotMatchSearchKeyword>
         ) : (
-          sliceSearchSuggestList.map(item => <KeywordItem item={item.sickNm} key={item.sickCd} />)
+          sliceSearchSuggestList.map(item => (
+            <KeywordItem
+              suggestedKeyword={item.sickNm}
+              searchKeyword={searchKeyword}
+              key={item.sickCd}
+            />
+          ))
         )}
       </Styled.SuggestionKeywordBox>
     </>
