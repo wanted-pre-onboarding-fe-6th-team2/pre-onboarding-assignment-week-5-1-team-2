@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchIcon from '@/components/search/UI/SearchIcon';
 import * as Styled from '@/components/search/SearchTab/SearchTab.styled';
-import SuggestionKeywordBox from '@/components/search/SuggestionKeywordBox/SuggestionKeywordBox';
+import SearchKeywordTab from '@/components/search/SearchKeywordTab/SearchKeywordTab';
 
 const SearchTab = () => {
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -35,7 +35,7 @@ const SearchTab = () => {
           <SearchIcon />
         </Styled.SearchTabButton>
       </Styled.SearchTabForm>
-      <SuggestionKeywordBox searchKeyword={searchKeyword} openBox={openBox} />
+      <SearchKeywordTab searchKeyword={searchKeyword} openBox={openBox} />
     </Styled.SearchTabContainer>
   );
 };

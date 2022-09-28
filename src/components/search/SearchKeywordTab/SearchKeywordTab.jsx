@@ -1,9 +1,9 @@
 import React from 'react';
-import * as Styled from '@/components/search/SuggestionKeywordBox/SuggestionKeywordBox.styled';
+import * as Styled from '@/components/search/SearchKeywordTab/SearchKeywordTab.styled';
 import RecentResult from '@/components/search/searchResult/RecentResult/RecentResult';
 import SuggestionResult from '@/components/search/searchResult/SuggestionResult/SuggestionResult';
 
-const SuggestionKeywordBox = ({ searchKeyword, openBox }) => {
+const SearchKeywordTab = ({ searchKeyword, openBox }) => {
   return (
     <div>
       {openBox === false ? null : (
@@ -19,4 +19,4 @@ const SuggestionKeywordBox = ({ searchKeyword, openBox }) => {
   );
 };
 
-export default SuggestionKeywordBox;
+export default SearchKeywordTab;
