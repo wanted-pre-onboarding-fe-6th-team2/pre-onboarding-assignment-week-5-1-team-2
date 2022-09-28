@@ -1,15 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import SearchIcon from '@/components/search/UI/SearchIcon';
 import * as Styled from '@/components/search/SearchTab/SearchTab.styled';
 import SearchKeywordTab from '@/components/search/SearchKeywordTab/SearchKeywordTab';
+import { searchBySickName } from '@/api/searchApiService';
+import debounce from '@/utils/debounce';
 
 const SearchTab = () => {
+  const [searchSuggestList, setSearchSuggestList] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [isTabOpen, setIsTabOpen] = useState(false);
 
-  const onChange = e => {
+  const onChangeSearchKeyword = e => {
     setSearchKeyword(e.target.value);
   };
+
+  const debounceSearchBySickName = useMemo(() => {
+    return debounce(({ keyword }) => {
+      searchBySickName({ keyword }).then(setSearchSuggestList);
+    }, 500);
+  }, []);
+
+  useEffect(() => {
+    if (searchKeyword) debounceSearchBySickName({ keyword: searchKeyword });
+  }, [searchKeyword, debounceSearchBySickName]);
 
   return (
     <Styled.SearchTabContainer>
@@ -27,14 +40,18 @@ const SearchTab = () => {
             e.target.placeholder = '질환명을 입력해 주세요.';
             setIsTabOpen(false);
           }}
-          onChange={onChange}
+          onChange={onChangeSearchKeyword}
           value={searchKeyword}
         />
         <Styled.SearchTabButton type="submit">
           <SearchIcon />
         </Styled.SearchTabButton>
       </Styled.SearchTabForm>
-      <SearchKeywordTab searchKeyword={searchKeyword} isTabOpen={isTabOpen} />
+      <SearchKeywordTab
+        searchSuggestList={searchSuggestList}
+        searchKeyword={searchKeyword}
+        isTabOpen={isTabOpen}
+      />
     </Styled.SearchTabContainer>
   );
 };
