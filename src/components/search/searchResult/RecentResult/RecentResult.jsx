@@ -12,16 +12,16 @@ const RecentResult = () => {
           <KeywordItem item={item} key={i} />
         ))}
       </Styled.RecentKeywordBox>
-      <Styled.RecommandKeywordWrraper>
+      <Styled.SuggestionKeywordWrraper>
         <Styled.SubText>추천 검색어로 검색해보세요</Styled.SubText>
-        <Styled.RecommandKeywordBox>
+        <Styled.SuggestionKeywordBox>
           <Styled.SuggestionKeyword>B형 간염</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>비만</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>관절염</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>우울증</Styled.SuggestionKeyword>
           <Styled.SuggestionKeyword>식도염</Styled.SuggestionKeyword>
-        </Styled.RecommandKeywordBox>
-      </Styled.RecommandKeywordWrraper>
+        </Styled.SuggestionKeywordBox>
+      </Styled.SuggestionKeywordWrraper>
     </>
   );
 };
