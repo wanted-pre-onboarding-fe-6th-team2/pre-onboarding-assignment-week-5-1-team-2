@@ -6,6 +6,8 @@ const Container = styled.div`
   max-height: 460px;
   box-shadow: 0 5px 3px 3px rgba(0, 0, 0, 0.05);
   border-radius: 15px;
+  background-color: white;
+  margin-top: 15px;
 `;
 
 const RecentKeywordBox = styled.div`
