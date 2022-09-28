@@ -5,7 +5,7 @@ import SearchKeywordTab from '@/components/search/SearchKeywordTab/SearchKeyword
 
 const SearchTab = () => {
   const [searchKeyword, setSearchKeyword] = useState('');
-  const [openBox, setOpenBox] = useState(false);
+  const [isTabOpen, setIsTabOpen] = useState(false);
 
   const onChange = e => {
     setSearchKeyword(e.target.value);
@@ -22,11 +22,11 @@ const SearchTab = () => {
           placeholder="질환명을 입력해 주세요."
           onFocus={e => {
             e.target.placeholder = '';
-            setOpenBox(true);
+            setIsTabOpen(true);
           }}
           onBlur={e => {
             e.target.placeholder = '질환명을 입력해 주세요.';
-            setOpenBox(false);
+            setIsTabOpen(false);
           }}
           onChange={onChange}
           value={searchKeyword}
@@ -35,7 +35,7 @@ const SearchTab = () => {
           <SearchIcon />
         </Styled.SearchTabButton>
       </Styled.SearchTabForm>
-      <SearchKeywordTab searchKeyword={searchKeyword} openBox={openBox} />
+      <SearchKeywordTab searchKeyword={searchKeyword} isTabOpen={isTabOpen} />
     </Styled.SearchTabContainer>
   );
 };

@@ -3,10 +3,10 @@ import * as Styled from '@/components/search/SearchKeywordTab/SearchKeywordTab.s
 import RecentResult from '@/components/search/searchResult/RecentResult/RecentResult';
 import SuggestionResult from '@/components/search/searchResult/SuggestionResult/SuggestionResult';
 
-const SearchKeywordTab = ({ searchKeyword, openBox }) => {
+const SearchKeywordTab = ({ searchKeyword, isTabOpen }) => {
   return (
     <div>
-      {openBox === false ? null : (
+      {isTabOpen === false ? null : (
         <Styled.Container>
           {searchKeyword === '' ? (
             <RecentResult />
