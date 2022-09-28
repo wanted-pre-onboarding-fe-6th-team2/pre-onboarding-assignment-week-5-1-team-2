@@ -59,6 +59,9 @@ const SearchTab = () => {
 
     if (searchKeyword) debounceSearchBySickName({ keyword: searchKeyword });
   }, [searchKeyword, debounceSearchBySickName]);
+  useEffect(() => {
+    console.log(searchSuggestList);
+  }, [searchSuggestList]);
 
   return (
     <Styled.SearchTabContainer>
@@ -76,6 +79,7 @@ const SearchTab = () => {
           }}
           onBlur={() => {
             setIsTabOpen(false);
+            setSelected(-1);
           }}
           onChange={onChangeSearchKeyword}
         />
