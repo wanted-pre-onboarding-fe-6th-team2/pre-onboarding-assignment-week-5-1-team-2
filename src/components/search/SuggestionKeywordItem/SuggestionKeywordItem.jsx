@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Styled from '@/components/search/KeywordItem/KeywordItem.styled';
+import * as Styled from '@/components/search/SuggestionKeywordItem/SuggestionKeywordItem.styled';
 import { ReactComponent as SearchIcon } from '@/assets/search.svg';
 
 const boldText = (suggestedKeyword, searchKeyword) => {
@@ -14,7 +14,7 @@ const boldText = (suggestedKeyword, searchKeyword) => {
   return { prevStrOfSearchKeyword, nextStrOfSearchKeyword };
 };
 
-const KeywordItem = ({
+const SuggestionKeywordItem = ({
   suggestedKeyword,
   searchKeyword,
   idx,
@@ -55,4 +55,4 @@ const KeywordItem = ({
   );
 };
 
-export default KeywordItem;
+export default SuggestionKeywordItem;

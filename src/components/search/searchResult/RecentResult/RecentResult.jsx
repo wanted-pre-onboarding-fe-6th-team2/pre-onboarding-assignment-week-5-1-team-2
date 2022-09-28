@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from '@/components/search/searchResult/RecentResult/RecentResult.styled';
-import KeywordItem from '@/components/search/KeywordItem/KeywordItem';
+import RecentKeywordItem from '@/components/search/RecentKeywordItem/RecentKeywordItem';
 
 const RecentResult = () => {
   const keywordHistory = ['B형간염', '비만', '관절염', '우울증', '동맥경화', '독감', '일본뇌염'];
@@ -8,8 +8,8 @@ const RecentResult = () => {
     <>
       <Styled.RecentKeywordBox>
         <Styled.SubText>최근검색어</Styled.SubText>
-        {keywordHistory.map((item, i) => (
-          <KeywordItem item={item} key={i} />
+        {keywordHistory.map((recentKeywordList, i) => (
+          <RecentKeywordItem recentKeywordList={recentKeywordList} key={i} />
         ))}
       </Styled.RecentKeywordBox>
       <Styled.SuggestionKeywordWrraper>

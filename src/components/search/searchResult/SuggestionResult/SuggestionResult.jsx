@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from '@/components/search/searchResult/SuggestionResult/SuggestionResult.styled';
 import { ReactComponent as SearchIcon } from '@/assets/search.svg';
-import KeywordItem from '@/components/search/KeywordItem/KeywordItem';
+import SuggestionKeywordItem from '@/components/search/SuggestionKeywordItem/SuggestionKeywordItem';
 
 const SuggestionResult = ({
   searchSuggestList,
@@ -26,7 +26,7 @@ const SuggestionResult = ({
           <Styled.NotMatchSearchKeyword>검색어 없음</Styled.NotMatchSearchKeyword>
         ) : (
           sliceSearchSuggestList.map((item, index) => (
-            <KeywordItem
+            <SuggestionKeywordItem
               suggestedKeyword={item.sickNm}
               searchKeyword={searchKeyword}
               handleSuggestionItemClick={handleSuggestionItemClick}
