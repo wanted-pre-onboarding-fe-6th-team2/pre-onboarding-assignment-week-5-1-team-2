@@ -1,8 +1,8 @@
-import api from '@/api';
+import http from '@/api';
 
 export const getSick = async keyword => {
   try {
-    const response = await api.get(`/sick?q=${keyword}`);
+    const response = await http.get(`/sick?q=${keyword}`);
 
     return response.data;
   } catch (error) {
