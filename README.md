@@ -87,7 +87,15 @@ yarn dev
 
 **해결방법**
 
+- 확장성을 고려해 Axios 인스턴스를 생성해 재사용되는 config를 처리했습니다.
+- Axios의 request interceptor를 활용해 모든 api 요청에 요구사항 `console.info("calling api")`를 삽입했습니다.
+- `json-server`의 Full Text Search를 활용해 검색 api를 추가했습니다.
+- 전체 데이터를 가져오는 api의 경우 해당 과제에서 불필요하다고 생각해 제거했습니다.
+
 **트러블 슈팅**
+
+- 단순 keyword를 인자로 받아 API 호출을 하도록 처리했으나, 코드 리뷰 결과 확장성을 고려해 객체 형태로 인자의 데이터 타입을 변경했습니다.
+- Axios의 request interceptor를 eject하는 경우를 대비하여 함수로 분리하는 방식을 고민했으나, 이번 과제에서는 불필요한 코드라고 생각되어 제거했습니다.
 
 ### API 호출 최적화
 
