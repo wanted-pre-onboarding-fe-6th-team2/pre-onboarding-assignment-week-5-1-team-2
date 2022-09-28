@@ -12,4 +12,9 @@ const RecentKeyword = styled.div`
   column-gap: 10px;
 `;
 
-export { RecentKeyword };
+const SearchKeywordHighlight = styled.em`
+  font-style: normal;
+  font-weight: 700;
+`;
+
+export { RecentKeyword, SearchKeywordHighlight };

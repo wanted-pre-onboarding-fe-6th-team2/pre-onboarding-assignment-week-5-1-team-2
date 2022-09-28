@@ -4,6 +4,7 @@ const SuggestionKeywordBox = styled.div`
   width: 450px;
   height: 100%;
   padding: 20px;
+  text-align: center;
 `;
 
 const InputKeywordBox = styled.div`
@@ -27,6 +28,12 @@ const SubText = styled.div`
   font-size: 14px;
   font-weight: bold;
   color: gray;
+  text-align: left;
 `;
 
-export { InputKeywordBox, InputKeyword, SubText, SuggestionKeywordBox };
+const NotMatchSearchKeyword = styled.span`
+  display: inline-block;
+  margin-top: 30px;
+`;
+
+export { InputKeywordBox, InputKeyword, SubText, SuggestionKeywordBox, NotMatchSearchKeyword };

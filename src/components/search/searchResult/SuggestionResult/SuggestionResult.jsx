@@ -3,8 +3,8 @@ import * as Styled from '@/components/search/searchResult/SuggestionResult/Sugge
 import { ReactComponent as SearchIcon } from '@/assets/search.svg';
 import KeywordItem from '@/components/search/KeywordItem/KeywordItem';
 
-const SuggestionResult = ({ searchKeyword }) => {
-  const suggestionKeywords = ['A형간염', '우울증', '감기', '코로나', '비염'];
+const SuggestionResult = ({ searchSuggestList, searchKeyword }) => {
+  const sliceSearchSuggestList = searchSuggestList.slice(0, 10);
 
   return (
     <>
@@ -16,9 +16,17 @@ const SuggestionResult = ({ searchKeyword }) => {
       </Styled.InputKeywordBox>
       <Styled.SuggestionKeywordBox>
         <Styled.SubText>추천검색어</Styled.SubText>
-        {suggestionKeywords.map((item, i) => (
-          <KeywordItem item={item} key={i} />
-        ))}
+        {sliceSearchSuggestList.length === 0 ? (
+          <Styled.NotMatchSearchKeyword>검색어 없음</Styled.NotMatchSearchKeyword>
+        ) : (
+          sliceSearchSuggestList.map(item => (
+            <KeywordItem
+              suggestedKeyword={item.sickNm}
+              searchKeyword={searchKeyword}
+              key={item.sickCd}
+            />
+          ))
+        )}
       </Styled.SuggestionKeywordBox>
     </>
   );
