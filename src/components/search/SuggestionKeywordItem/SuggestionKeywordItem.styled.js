@@ -17,7 +17,7 @@ const FocusedRecentKeyword = styled.li`
   vertical-align: middle;
   height: 25px;
   margin: 10px 0px;
-  background-color: lightgray;
+  background-color: azure;
 `;
 
 const SearchKeywordHighlight = styled.em`
