@@ -11,4 +11,9 @@ const RecentKeyword = styled.div`
   }
 `;
 
-export { RecentKeyword };
+const SearchKeywordHighlight = styled.em`
+  font-style: normal;
+  font-weight: 700;
+`;
+
+export { RecentKeyword, SearchKeywordHighlight };
