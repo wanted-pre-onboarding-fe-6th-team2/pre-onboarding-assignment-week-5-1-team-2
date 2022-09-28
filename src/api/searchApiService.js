@@ -1,6 +1,6 @@
 import http from '@/api';
 
-export const getSick = async keyword => {
+export const searchBySickName = async ({ keyword }) => {
   try {
     const response = await http.get(`/sick?q=${keyword}`);
 
