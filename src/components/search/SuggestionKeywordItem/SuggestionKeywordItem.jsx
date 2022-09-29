@@ -11,7 +11,8 @@ const boldText = (suggestedKeyword, searchKeyword) => {
   const searchKeywordIndex = lowerCaseSuggestKeyword.indexOf(searchKeyword);
   const prevStrOfSearchKeyword = suggestedKeyword.slice(0, searchKeywordIndex);
   const nextStrOfSearchKeyword = suggestedKeyword.slice(searchKeywordIndex + searchKeyword.length);
-  return { prevStrOfSearchKeyword, nextStrOfSearchKeyword, searchKeywordIndex };
+
+  return { prevStrOfSearchKeyword, nextStrOfSearchKeyword };
 };
 
 const SuggestionKeywordItem = ({
@@ -22,7 +23,7 @@ const SuggestionKeywordItem = ({
   selected,
   hasText,
 }) => {
-  const { prevStrOfSearchKeyword, nextStrOfSearchKeyword, searchKeywordIndex } = boldText(
+  const { prevStrOfSearchKeyword, nextStrOfSearchKeyword } = boldText(
     suggestedKeyword,
     searchKeyword
   );
@@ -50,7 +51,7 @@ const SuggestionKeywordItem = ({
               </Styled.IconWarraper>
               {prevStrOfSearchKeyword}
               <Styled.SearchKeywordHighlight>
-                {suggestedKeyword[searchKeywordIndex]}
+                {searchKeyword.toUpperCase()}
               </Styled.SearchKeywordHighlight>
               {nextStrOfSearchKeyword}
             </>
