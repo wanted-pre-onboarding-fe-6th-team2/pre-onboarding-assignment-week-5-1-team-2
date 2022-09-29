@@ -60,11 +60,6 @@ const SearchTab = () => {
     if (searchKeyword) debounceSearchBySickName({ keyword: searchKeyword });
   }, [searchKeyword, debounceSearchBySickName]);
 
-  useEffect(() => {
-    console.log(searchSuggestList);
-    console.log(searchKeyword);
-  }, [searchSuggestList]);
-
   return (
     <Styled.SearchTabContainer>
       <Styled.SearchTabHeader>
