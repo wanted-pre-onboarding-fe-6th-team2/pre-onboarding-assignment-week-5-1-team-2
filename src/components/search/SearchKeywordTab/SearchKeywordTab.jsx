@@ -3,15 +3,28 @@ import * as Styled from '@/components/search/SearchKeywordTab/SearchKeywordTab.s
 import RecentResult from '@/components/search/searchResult/RecentResult/RecentResult';
 import SuggestionResult from '@/components/search/searchResult/SuggestionResult/SuggestionResult';
 
-const SearchKeywordTab = ({ searchSuggestList, searchKeyword, isTabOpen }) => {
+const SearchKeywordTab = ({
+  searchSuggestList,
+  searchKeyword,
+  isTabOpen,
+  hasText,
+  handleSuggestionItemClick,
+  selected,
+}) => {
   return (
     <div>
-      {isTabOpen === false ? null : (
+      {isTabOpen && (
         <Styled.Container>
-          {searchKeyword === '' ? (
+          {!hasText ? (
             <RecentResult />
           ) : (
-            <SuggestionResult searchSuggestList={searchSuggestList} searchKeyword={searchKeyword} />
+            <SuggestionResult
+              searchKeyword={searchKeyword}
+              searchSuggestList={searchSuggestList}
+              handleSuggestionItemClick={handleSuggestionItemClick}
+              selected={selected}
+              hasText={hasText}
+            />
           )}
         </Styled.Container>
       )}

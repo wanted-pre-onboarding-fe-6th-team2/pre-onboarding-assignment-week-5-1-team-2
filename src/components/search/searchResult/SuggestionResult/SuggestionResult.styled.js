@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-const SuggestionKeywordBox = styled.div`
+const SuggestionKeywordBox = styled.ul`
   width: 450px;
   height: 100%;
   padding: 20px;

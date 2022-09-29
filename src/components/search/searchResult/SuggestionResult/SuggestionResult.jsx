@@ -1,9 +1,15 @@
 import React from 'react';
 import * as Styled from '@/components/search/searchResult/SuggestionResult/SuggestionResult.styled';
 import { ReactComponent as SearchIcon } from '@/assets/search.svg';
-import KeywordItem from '@/components/search/KeywordItem/KeywordItem';
+import SuggestionKeywordItem from '@/components/search/SuggestionKeywordItem/SuggestionKeywordItem';
 
-const SuggestionResult = ({ searchSuggestList, searchKeyword }) => {
+const SuggestionResult = ({
+  searchSuggestList,
+  searchKeyword,
+  handleSuggestionItemClick,
+  selected,
+  hasText,
+}) => {
   const sliceSearchSuggestList = searchSuggestList.slice(0, 10);
 
   return (
@@ -19,11 +25,15 @@ const SuggestionResult = ({ searchSuggestList, searchKeyword }) => {
         {sliceSearchSuggestList.length === 0 ? (
           <Styled.NotMatchSearchKeyword>검색어 없음</Styled.NotMatchSearchKeyword>
         ) : (
-          sliceSearchSuggestList.map(item => (
-            <KeywordItem
+          sliceSearchSuggestList.map((item, index) => (
+            <SuggestionKeywordItem
               suggestedKeyword={item.sickNm}
               searchKeyword={searchKeyword}
+              handleSuggestionItemClick={handleSuggestionItemClick}
               key={item.sickCd}
+              selected={selected}
+              hasText={hasText}
+              idx={index}
             />
           ))
         )}
